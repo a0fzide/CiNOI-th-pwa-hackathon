@@ -4,14 +4,107 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content>
+  <ion-row justify-content-center>
+    <ion-row col-12 col-sm-8 col-lg-6 no-padding>
+      <ion-list col-12 no-padding no-margin>
+        <ion-item>
+          <ion-label>ใช้รถไฟฟ้าเดินทาง</ion-label>
+          <ion-select [(ngModel)]="cycle">
+            <ion-option value="1">จันทร์ - ศุกร์</ion-option>
+            <ion-option value="2">จันทร์ - เสาร์</ion-option>
+            <ion-option value="3">ทุกวันอาทิตย์ - เสาร์</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          1. BTS 50 เที่ยว 30 วัน
+          <p>ราคา 700 บาท</p>
+          <div item-end>
+            เกิน 2 เที่ยว
+          </div>
+        </ion-item>
+        <ion-item>
+          2. BTS 50 เที่ยว 30 วัน
+          <p>ราคา 700 บาท</p>
+          <div item-end>
+            เกิน 2 เที่ยว
+          </div>
+        </ion-item>
+        <ion-item>
+          3. BTS 50 เที่ยว 30 วัน
+          <p>ราคา 700 บาท</p>
+          <div item-end>
+            เกิน 2 เที่ยว
+          </div>
+        </ion-item>
+        <ion-item>
+          3. BTS 50 เที่ยว 30 วัน
+          <p>ราคา 700 บาท</p>
+          <div item-end>
+            เกิน 2 เที่ยว
+          </div>
+        </ion-item>
+        <ion-item color="primary">
+          เดือน ปี
+          <div item-end>
+            แนะนำ
+          </div>
+        </ion-item>
+        <ion-item>
+          <ion-row>
+            <ion-col no-padding *ngFor="let i of ['อา.','จ.','อัง.','พ.','พฤ.','ศ.','ส.']" center text-center>
+              {{i}}
+            </ion-col>
+          </ion-row>
+        </ion-item>
+        <ion-item>
+          <ion-row>
+            <ion-col *ngFor="let i of [0,1,2,3,4,5,6]" center text-center>
+              <div>{{calendar[i].date}}</div>
+              <ion-row justify-content-around>
+                <ion-icon name="sunny"></ion-icon>
+                <ion-icon name="moon"></ion-icon>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col *ngFor="let i of [7,8,9,10,11,12,13]" center text-center>
+              <div>{{calendar[i].date}}</div>
+              <ion-row justify-content-around>
+                <ion-icon name="sunny"></ion-icon>
+                <ion-icon name="moon"></ion-icon>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col *ngFor="let i of [14,15,16,17,18,19,13]" center text-center>
+              <div>{{calendar[i].date}}</div>
+              <ion-row justify-content-around>
+                <ion-icon name="sunny"></ion-icon>
+                <ion-icon name="moon"></ion-icon>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col *ngFor="let i of [7,8,9,10,11,12,13]" center text-center>
+              <div>{{calendar[i].date}}</div>
+              <ion-row justify-content-around>
+                <ion-icon name="sunny"></ion-icon>
+                <ion-icon name="moon"></ion-icon>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col *ngFor="let i of [7,8,9,10,11,12,13]" center text-center>
+              <div>{{calendar[i].date}}</div>
+              <ion-row justify-content-around>
+                <ion-icon name="sunny"></ion-icon>
+                <ion-icon name="moon"></ion-icon>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+        </ion-item>
+      </ion-list>
+    </ion-row>
+  </ion-row>
 </ion-content>
