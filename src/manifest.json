@@ -1,7 +1,9 @@
 {
-  "name": "Ionic",
-  "short_name": "Ionic",
+  "name": "คำนวนเที่ยว BTS",
+  "short_name": "คำนวนเที่ยว BTS",
   "start_url": "index.html",
+  "orientation": "portrait",
+  "prefer_related_applications": false,
   "display": "standalone",
   "icons": [{
     "src": "assets/imgs/logo.png",

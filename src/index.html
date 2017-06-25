@@ -3,29 +3,33 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Ionic App</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="คำนวนเที่ยว BTS">
+  <meta name="keywords" content="bts, คำนวนเที่ยว, บัตร, rabbit, card">
+  <title>คำนวนเที่ยว BTS</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="format-detection" content="telephone=no">
   <meta name="msapplication-tap-highlight" content="no">
-
+  <link rel="apple-touch-icon" href="assets/icon/favicon.ico" />
+  <link rel="apple-touch-startup-image" href="assets/icon/favicon.ico">
   <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#4e8ef7">
 
   <!-- cordova.js required for cordova apps -->
-  <script src="cordova.js"></script>
+  <!--<script src="cordova.js"></script>-->
   <noscript>
     <h1>You don’t have javascript enabled.</h1>
     <p>Please enable it to get the full experience.</p>
   </noscript>
-  <!-- un-comment this code to enable service worker
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('service-worker.js')
         .then(() => console.log('service worker installed'))
         .catch(err => console.error('Error', err));
     }
-  </script>-->
+  </script>
 
   <link href="build/main.css" rel="stylesheet">
 
