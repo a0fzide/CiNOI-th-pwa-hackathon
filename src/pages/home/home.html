@@ -1,6 +1,6 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>คำนวนบัตร BTS</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -21,48 +21,54 @@
           <p>ราคา 1250 บาท</p>
           <p>ส่วนต่อขยายราคา {{15*50}} บาท</p>
           <div item-end text-center>
-            <!--<small>เที่ยวสุดท้าย</small>
-            <p>{{getLastTrip(cycle,getTrips(cycle, 50))}}</p>-->
-            <div>เหลือ {{getTrips(cycle, 50)}} เที่ยว</div>
+            <div *ngIf="getTrips(cycle, 50)[0] > 0; else trips50">เหลือ {{getTrips(cycle, 50)[0]}} เที่ยว</div>
+            <ng-template #trips50 center text-center>
+              <small>รอบสุดท้ายวันที่</small>
+              <p>{{getTrips(cycle, 50)[1]}}</p>
+            </ng-template>
           </div>
         </ion-item>
         <ion-item>
           2. BTS 40 เที่ยว 30 วัน
           <p>ราคา 1040 บาท</p>
           <p>ส่วนต่อขยายราคา {{15*40}} บาท</p>
-          <div item-end>
-            <!--<small>เที่ยวสุดท้าย</small>
-            <p>{{getLastTrip(cycle,getTrips(cycle, 40))}}</p>-->
-            <div>เหลือ {{getTrips(cycle, 40)}} เที่ยว</div>
+          <div item-end center text-center>
+            <div *ngIf="getTrips(cycle, 40)[0] > 0; else trips40">เหลือ {{getTrips(cycle, 40)[0]}} เที่ยว</div>
+            <ng-template #trips40 center text-center>
+              <small>รอบสุดท้ายวันที่</small>
+              <p>{{getTrips(cycle, 40)[1]}}</p>
+            </ng-template>
           </div>
         </ion-item>
         <ion-item>
           3. BTS 25 เที่ยว 30 วัน
           <p>ราคา 700 บาท</p>
           <p>ส่วนต่อขยายราคา {{15*25}} บาท</p>
-          <div item-end>
-            <!--{{getTrips(cycle, 25)}}-->
-            <!--<small>เที่ยวสุดท้าย</small>
-            <p>{{getLastTrip(cycle,getTrips(cycle, 25))}}</p>-->
-            <div>เหลือ {{getTrips(cycle, 25)}} เที่ยว</div>
+          <div item-end center text-center>
+            <div *ngIf="getTrips(cycle, 25)[0] > 0; else trips25">เหลือ {{getTrips(cycle, 25)[0]}} เที่ยว</div>
+            <ng-template #trips25 center text-center>
+              <small center text-center>รอบสุดท้ายวันที่</small>
+              <p center text-center>{{getTrips(cycle, 25)[1]}}</p>
+            </ng-template>
           </div>
         </ion-item>
         <ion-item>
           4. BTS 15 เที่ยว 30 วัน
           <p>ราคา 450 บาท</p>
           <p>ส่วนต่อขยายราคา {{15*15}} บาท</p>
-          <div item-end>
-            <!--{{getTrips(cycle, 15)}}-->
-            <!--<small>เที่ยวสุดท้าย</small>
-            <p>{{getLastTrip(cycle,getTrips(cycle, 40))}}</p>-->
-            <div>เหลือ {{getTrips(cycle, 15)}} เที่ยว</div>
+          <div item-end center text-center>
+            <div *ngIf="getTrips(cycle, 15)[0] > 0; else trips15">เหลือ {{getTrips(cycle, 15)[0]}} เที่ยว</div>
+            <ng-template #trips15 center text-center>
+              <small center text-center>รอบสุดท้ายวันที่</small>
+              <p center text-center>{{getTrips(cycle, 15)[1]}}</p>
+            </ng-template>
           </div>
         </ion-item>
         <ion-item color="primary">
-          <p>วันนี้</p>
+          <p>ซื้อบัตร วันนี้</p>
           <small>{{now}}</small>
           <div item-end>
-            <p>หมดอายุ</p>
+            <p>ใช้ได้ถึง วันที่</p>
             <small>{{end}}</small>
           </div>
         </ion-item>
@@ -78,10 +84,6 @@
             <ion-col *ngFor="let i of [0,1,2,3,4,5,6]" center text-center>
               <div *ngIf="allCalendar[(j*7)+i].date != -1" [ngClass]="{'today': allCalendar[(j*7)+i].count == 0, 'expire': allCalendar[(j*7)+i].count == 29}">{{allCalendar[(j*7)+i].date}}</div>
               <ion-row *ngIf="allCalendar[(j*7)+i].date != -1" justify-content-around>
-                <!--<ion-icon name="sunny"></ion-icon>
-                <ion-icon name="moon"></ion-icon>-->
-                <!--<small *ngIf="allCalendar[(j*7)+i].date != -1">{{(allCalendar[(j*7)+i].count+(j*7)+i)+1}}</small>-->
-                <!--<small *ngIf="allCalendar[(j*7)+i].date != -1">{{(allCalendar[(j*7)+i].count+(j*7)+i)+2}}</small>-->
               </ion-row>
             </ion-col>
           </ion-row>
