@@ -32,7 +32,7 @@ export class HomePage {
       this.week.push(5);
     }
     for (let i = 0; i < 30; i++) {
-      this.calendar[this.day + i] = {
+      this.calendar[i] = {
         'day': new Date(this.unixtime + (i * 86400000)).getDay(),
         'date': new Date(this.unixtime + (i * 86400000)).getDate(),
         'month': new Date(this.unixtime + (i * 86400000)).getMonth(),
